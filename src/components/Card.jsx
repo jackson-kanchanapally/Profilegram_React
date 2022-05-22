@@ -71,7 +71,7 @@ export default function Card(props) {
   }
 
   return (
-    <Flex backgroundColor='gray.800' height="97vh" width="100vw" justify="center">
+    <Flex backgroundColor='gray.800' height={["72vh","97vh" ]}width="100vw" justify="center">
       
       <Box
       boxShadow='dark-lg'
@@ -93,7 +93,7 @@ export default function Card(props) {
           </HStack>
           <Image
           borderRadius='10'
-            boxSize="70vh"
+            boxSize={["50vh","70vh"]}
             objectFit="cover"
             src={props.profImg}
             alt={"jackson"}
