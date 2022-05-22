@@ -84,6 +84,7 @@ export default function Card(props) {
         mt='8'
         pl='2'
         pr='2'
+        mb='-1'
       >
         <HStack ml='4' pt='2'  width="100%" direction="column" align="center">
           <Avatar size='md' src={props.profImg}></Avatar>
@@ -99,7 +100,7 @@ export default function Card(props) {
             alt={"jackson"}
           ></Image>
         
-        <HStack ml='5' mt="5" mb='1' spacing="4">
+        <HStack ml='5' mt="5" spacing="4">
           <Box>
             <AiFillLike size="35" color={color} onClick={toggle}/>
             <Text align='center' color='white'>{count}</Text>
