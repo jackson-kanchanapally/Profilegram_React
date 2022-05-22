@@ -65,7 +65,7 @@ export default function Card(props) {
      
        setColor2('white')
       setDislike(count=>count-1)
-      setCount(count=>count+1)
+     
       
     }
   }
