@@ -76,7 +76,7 @@ export default function Card(props) {
       <Box
       boxShadow='dark-lg'
         border="black"
-        
+        backgroundColor='gray.900'
         borderWidth="2"
         borderRadius="10"
         overflow="hidden"
@@ -99,7 +99,7 @@ export default function Card(props) {
             alt={"jackson"}
           ></Image>
         
-        <HStack ml='5' mt="5" spacing="4">
+        <HStack ml='5' mt="5" mb='1' spacing="4">
           <Box>
             <AiFillLike size="35" color={color} onClick={toggle}/>
             <Text align='center' color='white'>{count}</Text>

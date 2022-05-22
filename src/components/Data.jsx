@@ -20,7 +20,7 @@ export default function Data() {
 
   return (
     <Flex justifyContent='center' align='center' backgroundColor='gray.900' width='100vw'>
-     
+    
     <Flex backgroundColor='gray.900'>
   
       {Loading || !profile ? (
