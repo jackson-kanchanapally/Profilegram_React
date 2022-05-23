@@ -6,13 +6,13 @@ import {
   Flex,
   Box,
   Image,
-  
- 
   Avatar,
-
+  Text,
+  Heading
 } from "@chakra-ui/react";
-import { Text} from "@chakra-ui/react";
+
 import { AiFillLike, AiFillDislike } from "react-icons/ai";
+import { BiHeartCircle} from "react-icons/bi";
 
 
 export default function Card(props) {
@@ -25,7 +25,7 @@ export default function Card(props) {
   const toggle=()=>{
     if(color==='white')
     {
-      setColor('red')
+      setColor('#48BB78')
       setCount(count=>count+1)
       if(color2==='red')
       {
@@ -34,7 +34,7 @@ export default function Card(props) {
       }
     }
     else{
-      if(color==='red' && color2==='red')
+      if(color==='#48BB78' && color2==='red')
       {
         setColor2('white')
         setDislike(count=>count-1)
@@ -49,29 +49,26 @@ export default function Card(props) {
     {
       setColor2('red')
       setDislike(count=>count+1)
-      if(color==='red')
+      if(color==='#48BB78')
       {
         setColor('white')
         setCount(count=>count-1)
       }
     }
     else{
-      if(color2==='red' && color==='red')
+      if(color2==='red' && color==='#48BB78')
       {
         setColor('white')
         setCount(count=>count-1)
       
       }
-     
        setColor2('white')
       setDislike(count=>count-1)
-     
-      
     }
   }
 
   return (
-    <Flex backgroundColor='gray.800' height={["72vh","97vh" ]}width="100vw" justify="center">
+    <Flex backgroundColor='gray.800' height={["72vh","97vh" ]}width="100vw" justify="center" pt='12'>
       
       <Box
       boxShadow='dark-lg'
@@ -81,12 +78,13 @@ export default function Card(props) {
         borderRadius="10"
         overflow="hidden"
         borderColor="black"
-        mt='8'
+        mt='9'
         pl='2'
         pr='2'
-        mb='-1'
+        mb={['-16','-14']}
+        
       >
-        <HStack ml='4' pt='2'  width="100%" direction="column" align="center">
+        <HStack ml='4' pt='2' width="100%" direction="column" align="center">
           <Avatar size='md' src={props.profImg}></Avatar>
           <Text fontSize='35' color='white' pb="3">
             {props.profName}
@@ -100,7 +98,7 @@ export default function Card(props) {
             alt={"jackson"}
           ></Image>
         
-        <HStack ml='5' mt="5" spacing="4">
+        <HStack ml='5' mt="5"  spacing="4">
           <Box>
             <AiFillLike size="35" color={color} onClick={toggle}/>
             <Text align='center' color='white'>{count}</Text>
@@ -108,8 +106,8 @@ export default function Card(props) {
           
           <Box>
             <AiFillDislike size="35" color={color2} onClick={toggle2}/>
-            <Text align='center' color='white'>{dislike}</Text>
-          </Box>
+            <Text align='center' color='gray.100'>{dislike}</Text>
+          </Box> {count>=45 && dislike<=17?<HStack><Heading fontSize='25' color='gray.100' pl={['8vw','4vw']}>Most Loved</Heading><BiHeartCircle size='29'/></HStack>:<Text></Text>}
         </HStack>
         
       </Box>
