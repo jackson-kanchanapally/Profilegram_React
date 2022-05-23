@@ -8,10 +8,10 @@ import {
   Image,
   Avatar,
   Text,
-  Heading
 } from "@chakra-ui/react";
 
 import { AiFillLike, AiFillDislike } from "react-icons/ai";
+import {MdBookmark} from "react-icons/md";
 import { BiHeartCircle} from "react-icons/bi";
 
 
@@ -20,6 +20,7 @@ export default function Card(props) {
  const dis=props.reAge
   const [color,setColor]=useState('white')
   const [color2,setColor2]=useState('white')
+  const [saveColor,setSaveColor]=useState('white')
   const [count,setCount]=useState(def)
   const [dislike,setDislike]=useState(dis)
   const toggle=()=>{
@@ -27,14 +28,14 @@ export default function Card(props) {
     {
       setColor('#48BB78')
       setCount(count=>count+1)
-      if(color2==='red')
+      if(color2==='#F56565')
       {
         setColor2('white')
         setDislike(count=>count-1)
       }
     }
     else{
-      if(color==='#48BB78' && color2==='red')
+      if(color==='#48BB78' && color2==='#F56565')
       {
         setColor2('white')
         setDislike(count=>count-1)
@@ -44,10 +45,20 @@ export default function Card(props) {
     }
   
   }
+  const toggleSave=()=>{
+    if(saveColor==='white')
+    {
+      setSaveColor('#4FD1C5')
+    }
+    else{
+      setSaveColor('white')
+  
+  }
+}
   const toggle2=()=>{
     if(color2==='white')
     {
-      setColor2('red')
+      setColor2('#F56565')
       setDislike(count=>count+1)
       if(color==='#48BB78')
       {
@@ -56,7 +67,7 @@ export default function Card(props) {
       }
     }
     else{
-      if(color2==='red' && color==='#48BB78')
+      if(color2==='#F56565' && color==='#48BB78')
       {
         setColor('white')
         setCount(count=>count-1)
@@ -84,10 +95,10 @@ export default function Card(props) {
         mb={['-16','-14']}
         
       >
-        <HStack ml='4' pt='2' width="100%" direction="column" align="center">
+        <HStack mt='2' ml='4' pt='2'pb='3' width="100%" direction="column" align="center">
           <Avatar size='md' src={props.profImg}></Avatar>
-          <Text fontSize='35' color='white' pb="3">
-            {props.profName}
+          <Text fontSize='25' color='white'>
+            {`@${props.profName}`}
           </Text>
           </HStack>
           <Image
@@ -98,16 +109,24 @@ export default function Card(props) {
             alt={"jackson"}
           ></Image>
         
-        <HStack ml='5' mt="5"  spacing="4">
-          <Box>
+        <HStack ml='-2' mt="5"  spacing="4" justifyContent='center'>
+          <Box pr='3'>
             <AiFillLike size="35" color={color} onClick={toggle}/>
             <Text align='center' color='white'>{count}</Text>
           </Box>
           
-          <Box>
+            <Box>
             <AiFillDislike size="35" color={color2} onClick={toggle2}/>
             <Text align='center' color='gray.100'>{dislike}</Text>
-          </Box> {count>=45 && dislike<=17?<HStack><Heading fontSize='25' color='gray.100' pl={['8vw','4vw']}>Most Loved</Heading><BiHeartCircle color='gray.100' size='29'/></HStack>:<Text></Text>}
+          </Box> 
+          <HStack pl='53%'>
+          <Box >
+          {count>=45 && dislike<=17?<HStack><BiHeartCircle color='white' size='29'/></HStack>:<Text></Text>}
+          </Box>
+          <Box>
+            <MdBookmark color={saveColor} size='35' onClick={toggleSave}/>
+          </Box>
+          </HStack>
         </HStack>
         
       </Box>
