@@ -107,7 +107,7 @@ export default function Card(props) {
           <Box>
             <AiFillDislike size="35" color={color2} onClick={toggle2}/>
             <Text align='center' color='gray.100'>{dislike}</Text>
-          </Box> {count>=45 && dislike<=17?<HStack><Heading fontSize='25' color='gray.100' pl={['8vw','4vw']}>Most Loved</Heading><BiHeartCircle color='gray' size='29'/></HStack>:<Text></Text>}
+          </Box> {count>=45 && dislike<=17?<HStack><Heading fontSize='25' color='gray.100' pl={['8vw','4vw']}>Most Loved</Heading><BiHeartCircle color='gray.100' size='29'/></HStack>:<Text></Text>}
         </HStack>
         
       </Box>
