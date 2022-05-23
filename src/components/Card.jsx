@@ -27,6 +27,7 @@ export default function Card(props) {
     if(color==='white')
     {
       setColor('#48BB78')
+      
       setCount(count=>count+1)
       if(color2==='#F56565')
       {
@@ -120,7 +121,7 @@ export default function Card(props) {
             <Text align='center' color='gray.100'>{dislike}</Text>
           </Box> 
           <HStack pl={['48%','53%']}>
-          <Box >
+          <Box>
           {count>=45 && dislike<=17?<HStack><BiHeartCircle color='white' size='29'/></HStack>:<Text></Text>}
           </Box>
           <Box>
