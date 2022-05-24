@@ -123,7 +123,7 @@ export default function Card(props) {
             <AiFillDislike size="35" color={color2} onClick={toggle2}/>
             <Text color={props.formText} align='center'>{dislike}</Text>
           </Box> 
-          <HStack position='relative' left='56%'>
+          <HStack position='relative' left={['50%','55%']}>
           <Box>
           {count>=47 && dislike<=17?<HStack><BiHeartCircle color={props.formText} size='29'/></HStack>:<Text></Text>}
           </Box>

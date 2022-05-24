@@ -49,7 +49,7 @@ export default function Data(props) {
           ProfileGram
         </Heading>
 
-        <Link  position='relative' left={['19%','25%']}  href="https://github.com/kanchanapallyjackson"  isExternal><IconButton mr={5} isRound='true' icon={<GoMarkGithub/>} size='md'>
+        <Link position='relative' left={['15%','25%']}  href="https://github.com/kanchanapallyjackson"  isExternal><IconButton  mr={5} isRound='true' icon={<GoMarkGithub/>} size='md'>
           </IconButton> </Link>
 
             <IconButton size='md'
@@ -57,7 +57,7 @@ export default function Data(props) {
             borderRadius="full"
             colorScheme="green"
             onClick={toggleColorMode}
-            position='relative' left={['19%','25%']}  mr='5'
+            position='relative' left={['15%','25%']}  mr='5'
           >
           </IconButton>
       </Flex>
