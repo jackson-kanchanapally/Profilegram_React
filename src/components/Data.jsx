@@ -7,9 +7,20 @@ import {
   Flex,
   Box,
   Heading,
- 
+  useColorMode,
+  useColorModeValue,
+  Link,
+  IconButton,
 } from "@chakra-ui/react";
-export default function Data() {
+import {FaSun,FaMoon} from 'react-icons/fa'
+import {GoMarkGithub} from 'react-icons/go'
+export default function Data(props) {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const formBackground = useColorModeValue( "gray.700","gray.100");
+  const navBackground = useColorModeValue( "gray.900","gray.600");
+  const likeColor = useColorModeValue( "gray.900","gray.600");
+  const formText = useColorModeValue("gray.100","gray.600");
+  const boxBg = useColorModeValue("gray.900","gray.100");
   const [Loading, setLoading] = useState(true);
   const [profile, setProfile] = useState([]);
   const url = "https://api.randomuser.me/?results=100";
@@ -24,17 +35,31 @@ export default function Data() {
 
   return (
     <>
-      <Flex
-        height="8vh"
-        backgroundColor="gray.900"
+    
+  
+      <Flex pt='3' pb='3'
+        height="10vh"
+        backgroundColor={navBackground}
         align="center" position="absolute" width='100vw' zIndex={2}
         justifyContent='center'
         
       >
        
-        <Heading color="white">
+        <Heading ml={['-12vw','']} fontSize={['40','7vh']} color="white">
           ProfileGram
         </Heading>
+
+        <Link  position='relative' left={['19%','25%']}  href="https://github.com/kanchanapallyjackson"  isExternal><IconButton mr={5} isRound='true' icon={<GoMarkGithub/>} size='md'>
+          </IconButton> </Link>
+
+            <IconButton size='md'
+          icon={navBackground==='gray.900'?<FaSun/>:<FaMoon/>}
+            borderRadius="full"
+            colorScheme="green"
+            onClick={toggleColorMode}
+            position='relative' left={['19%','25%']}  mr='5'
+          >
+          </IconButton>
       </Flex>
       <Flex
         justifyContent="center"
@@ -63,6 +88,12 @@ export default function Data() {
                     age={per.dob.age}
                     profName={per.login.username}
                     profImg={per.picture.large}
+                    toggleColorMode={toggleColorMode}
+                    colorMode={colorMode}
+                    formBackground={formBackground}
+                    formText={formText}
+                    boxBg={boxBg}
+                    likeColor={likeColor}
                   />
                 </div>
               ))}
