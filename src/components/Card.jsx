@@ -87,12 +87,13 @@ export default function Card(props) {
       color={props.formText}
       boxShadow='dark-lg'
         border="black"
+        width={["98vw","auto"]}
         backgroundColor={props.boxBg}
         borderWidth="2"
         borderRadius="10"
         overflow="hidden"
         borderColor="black"
-        mt='9'
+        mt={['12','9']}
         pl='2'
         pr='2'
         mb={['-16','-14']}

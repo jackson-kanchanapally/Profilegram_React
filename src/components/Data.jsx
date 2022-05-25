@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import Loadings from "./Loadprof.gif";
 import axios from "axios";
 import Card from "./Card";
+import logo from "./logo.png"
 import {
   Image,
   Flex,
   Box,
-  Heading,
   useColorMode,
   useColorModeValue,
   Link,
@@ -45,9 +45,8 @@ export default function Data(props) {
         
       >
        
-        <Heading ml={['-12vw','']} fontSize={['40','7vh']} color="white">
-          ProfileGram
-        </Heading>
+        
+        <Image ml={['-22vw','']} boxSize={['60','55vh']} src={logo}></Image>
 
         <Link position='relative' left={['15%','25%']}  href="https://github.com/kanchanapallyjackson"  isExternal><IconButton  mr={5} isRound='true' icon={<GoMarkGithub/>} size='md'>
           </IconButton> </Link>
