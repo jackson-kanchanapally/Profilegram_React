@@ -48,7 +48,7 @@ export default function Data(props) {
         
         <Image ml={['-22vw','']} boxSize={['60','55vh']} src={logo}></Image>
 
-        <Link position='relative' left={['15%','25%']}  href="https://github.com/kanchanapallyjackson"  isExternal><IconButton  mr={5} isRound='true' icon={<GoMarkGithub/>} size='md'>
+        <Link position='relative' left={['15%','25%']}  href="https://github.com/jackson-kanchanapally?tab=repositories"  isExternal><IconButton  mr={5} isRound='true' icon={<GoMarkGithub/>} size='md'>
           </IconButton> </Link>
 
             <IconButton size='md'
